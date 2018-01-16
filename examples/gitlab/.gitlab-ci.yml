@@ -9,7 +9,6 @@ deploy_review:
   script:   
     - echo "deploy staging"
     - source /usr/local/bin/build-env
-    - export DOMAIN=$CI_ENVIRONMENT_SLUG.$CI_PROJECT_NAME.$DOCKSAL_HOST     # set docksal DOMAIN to gitlab environment
     - build-init
     - ssh docker-host "cd $REMOTE_BUILD_DIR && fin init"
   environment:
